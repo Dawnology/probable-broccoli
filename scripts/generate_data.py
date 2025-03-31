@@ -34,11 +34,11 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Generate training data from PGN files using Stockfish")
     parser.add_argument("--pgn-dir", type=str, default="pgn_training",
                         help="Directory containing PGN files")
-    parser.add_argument("--output", type=str, default="data/processed_training_data.h5",
+    parser.add_argument("--output", type=str, default="/workspaces/probable-broccoli/data/processed_training_data.h5",
                         help="Output HDF5 file")
-    parser.add_argument("--stockfish", type=str, default="stockfish/stockfish.exe",
+    parser.add_argument("--stockfish", type=str, default="/workspaces/probable-broccoli/stockfish/stockfish.exe",
                         help="Path to Stockfish executable")
-    parser.add_argument("--config", type=str, default="config.yaml",
+    parser.add_argument("--config", type=str, default="/workspaces/probable-broccoli/config.yaml",
                         help="Configuration file")
     parser.add_argument("--workers", type=int, default=4,
                         help="Number of worker processes")
