@@ -1,0 +1,22 @@
+# Chess AI Configuration
+
+# Paths
+stockfish_path: "D:/chessAI/MaxLevel/stockfish/stockfish.exe"
+pgn_input_dir: "D:/chessAI/MaxLevel/pgn_training/"
+processed_data_path: "D:/chessAI/MaxLevel/data/processed_training_data.h5"
+
+# Neural Network Parameters
+num_input_planes: 19  # 12 piece planes + 4 castling + 1 side-to-move + 1 en-passant + 1 fifty-move counter
+policy_vector_size: 4672  # Standard UCI move representation size 
+history_length: 8  # Number of historical positions to include
+
+# Data Generation Parameters
+data_gen_workers: 4  # Number of parallel processes for data generation
+stockfish_multipv: 5  # Number of principal variations to analyze
+stockfish_limit:  
+  depth: 10  # Stockfish search depth
+value_score_scaling_factor: 600  # Denominator for tanh conversion of centipawn score
+
+# MCTS Parameters
+c_puct: 1.0  # Exploration constant in PUCT formula
+num_simulations: 800  # Default number of MCTS simulations per move 
